@@ -14,7 +14,7 @@ WEEKDAYS = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday',
 LINES = 0
 
 
-def choice(line, input_type, df):
+def choice(line, input_type):
     """Handles user input"""
 
     while True:
@@ -86,13 +86,13 @@ def get_filters():
 # get user input for city (chicago, new york city, washington).
 # HINT: Use a while loop to handle invalid inputs
     city = choice("Would you like to view New York City, Chicago or "
-                  "Washington's data?\n", 'city', '')
+                  "Washington's data?\n", 'city')
 # get user input for month (all, january, february, ... , june)
     month = choice("Do you want to view all (enter 'all') or a specific "
-                   "month's data? (Enter Jan, Mar, Jun etc)\n", 'month', '')
+                   "month's data? (Enter Jan, Mar, Jun etc)\n", 'month')
 # get user input for day of week (all, monday, tuesday, ... sunday)
     day = choice("Which day would you like view (Monday, Tuesday, ... "
-                 "Sunday) or all (enter 'all') data available?\n", 'day', '')
+                 "Sunday) or all (enter 'all') data available?\n", 'day')
     print('-'*40)
     return city, month, day
 
