@@ -254,7 +254,6 @@ def main():
         user_stats(df)
         response = view_raw_data('Would you like to view the raw data? '
                                  '(yes/no or y/n)\n', df)
-        print(response)
         if response == 'y' or response == 'yes':
             response = view_more('Show more data?\n', df)
         restart = input('\nWould you like to restart? Enter yes or no.\n')
