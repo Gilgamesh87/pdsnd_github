@@ -34,22 +34,40 @@ def choice(line, input_type, df):
                 break
             else:
                 print('Enter a valid weekday i.e. Monday or Friday\n')
-        elif input_type == 'yn':
-            if response == 'y' or response == 'yes':
-                print(df.head())
-                global LINES
-                LINES += 5
-                break
-            elif response == 'n' or response == 'no':
-                print('Skipping Raw Data!')
-                break
-        elif input_type == 'more':
-            while response == 'y' or response == 'yes':
-                print(df[LINES:LINES+5])
-                LINES += 5
-                response = input('View more?\n')
+    return response
+
+
+def view_raw_data(line, df):
+    """Shows first 5 lines of the raw data"""
+
+    while True:
+        response = input(line).lower()
+        if response == 'y' or response == 'yes':
+            print(df.head())
+            global LINES
+            LINES += 5
+            break
+        elif response == 'n' or response == 'no':
+            print('Skipping Raw Data!')
+            break
+    return response
+
+
+def view_more(line, df):
+    """Shows a further 5 lines of the raw data"""
+
+    global LINES
+    response = input(line).lower()
+    while True:
+        if response == 'y' or response == 'yes':
+            print(df[LINES:LINES+5])
+            LINES += 5
+            response = input('View more?\n')
+        elif response == 'n' or response == 'no':
             print('Completed viewing the raw data!')
             break
+        else:
+            print('Invalid input (y/yes or n/no)')
     return response
 
 
@@ -234,11 +252,11 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
-        response = choice('Would you like to view the raw data? '
-                          '(yes/no or y/n)\n', 'yn', df)
+        response = view_raw_data('Would you like to view the raw data? '
+                                 '(yes/no or y/n)\n', df)
         print(response)
         if response == 'y' or response == 'yes':
-            response = choice('Show more data?\n', 'more', df)
+            response = view_more('Show more data?\n', df)
         restart = input('\nWould you like to restart? Enter yes or no.\n')
 
         if restart.lower() != 'yes':
