@@ -2,15 +2,20 @@ import time
 import pandas as pd
 import numpy as np
 
+# Create dictionary containing city name and associated filename
 CITY_DATA = {'chicago': 'chicago.csv',
              'new york city': 'new_york_city.csv',
              'washington': 'washington.csv'}
 
+# Create list for the month abbrevations for user selection
 MONTHS = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'all']
 
+# Create list for the weekdays for user selection
 WEEKDAYS = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday',
             'sunday', 'all']
 
+# Create variable to count lines read in the file and to allow the file lines
+# to be sliced if the user wants to continue seeing the raw data
 LINES = 0
 
 
