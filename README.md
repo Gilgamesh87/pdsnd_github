@@ -1,15 +1,20 @@
 ### Date created
-Include the date you created this project and README file.
+08/02/2021 02:17
 
 ### Project Title
-Replace the Project Title
+Bikeshare Project
 
 ### Description
-Describe what your project is about and what it does
+Introduction to using pandas to explore/analyse data in python.
+Utilised a sub-set of bikeshare data from Chicago, New York City and Washington.
+
 
 ### Files used
-Include the files used
+bikeshare_2.py
+chicago.csv
+new_york_city.csv
+washington.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+Thanks to Udacity for teaching practical skills
+Thanks to the comprehensive python and pandas documentation
